@@ -1,5 +1,5 @@
 function game_start() {
-  $(document).on("keypress", function () {
+  $(document).on("click", function () {
     $(document).off();
     start();
   });
@@ -41,11 +41,11 @@ function checker(level,boxs,arr,i){
     else {setTimeout(function(){cont(level,boxs,arr);},1000);}
 }
 function game_over(){
-    $("h1").text("Game Over,Press any Key to Restart");
+    $("h1").text("Game Over,Press click anywhere to Restart");
     $("body").addClass("game-over");
     var wrng=new Audio("./sounds/wrong.mp3");
     wrng.play();
-    $(document).on("keypress",function(){
+    $(document).on("click",function(){
         $("body").removeClass("game-over");
         $(document).off();
         start();
